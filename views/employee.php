@@ -1,51 +1,38 @@
 <?php require 'views/navbar.php'; ?>
 
-<div class="mx-auto" style="max-width: 720px;">
-    <h1 class="text-center my-4" style="color: #2B3990;">List Karyawan</h1>
-    <table class="table table-bordered table-hover align-middle border-secondary-subtle">
-        <thead>
-            <tr>
-                <th class="fw-normal" style="background-color: #94D3F7; width: 60px;">No</th>
-                <th class="fw-normal" style="background-color: #94D3F7;">Nama</th>
-                <th class="fw-normal" style="background-color: #94D3F7;">Jabatan</th>
-                <th class="fw-normal" style="background-color: #94D3F7;">Usia</th>
-                <th class="fw-normal text-center" style="background-color: #94D3F7; width: 100px;">Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($employees as $i => $e) { ?>
-            <tr>
-                <td class="py-3"><?= $i ?></td>
-                <td class="py-3"><?= $e['nama'] ?></td>
-                <td class="py-3"><?= $e['jabatan'] ?></td>
-                <td class="py-3"><?= $e['usia'] ?></td>
-                <td class="py-3 text-center">
-                    <a class="btn btn-sm btn-outline-danger" href="?page=employee&delete=<?= $e['id'] ?>">Delete</a>
-                </td>
-            </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+<h1 class="title text-center">List Karyawan</h1>
+<table class="table table-bordered">
+    <tr>
+        <th class="blue">No</th>
+        <th class="blue">Nama</th>
+        <th class="blue">Jabatan</th>
+        <th class="blue">Usia</th>
+        <th class="blue">Delete</th>
+    </tr>
+    <?php foreach ($employees as $i => $e) { ?>
+    <tr>
+        <td><?php echo $i; ?></td>
+        <td><?php echo $e['nama']; ?></td>
+        <td><?php echo $e['jabatan']; ?></td>
+        <td><?php echo $e['usia']; ?></td>
+        <td><a class="btn btn-sm btn-outline-danger" href="?page=employee&delete=<?php echo $e['id']; ?>">Delete</a></td>
+    </tr>
+    <?php } ?>
+</table>
 
-    <h1 class="text-center mt-5 mb-4" style="color: #2B3990;">Tambah Karyawan</h1>
-    <form method="POST" class="mx-auto" style="max-width: 480px;">
-        <div class="row mb-2 align-items-center">
-            <label class="col-3 text-end">Nama</label>
-            <div class="col-9"><input class="form-control" name="nama" placeholder="Masukkan Nama" required></div>
-        </div>
-        <div class="row mb-2 align-items-center">
-            <label class="col-3 text-end">Jabatan</label>
-            <div class="col-9"><input class="form-control" name="jabatan" placeholder="Masukkan Jabatan" required></div>
-        </div>
-        <div class="row mb-3 align-items-center">
-            <label class="col-3 text-end">Usia</label>
-            <div class="col-9"><input class="form-control" name="usia" type="number" placeholder="Masukkan Usia" required></div>
-        </div>
-        <div class="text-center">
-            <button class="btn px-5 border-dark" name="save" style="background-color: #94D3F7;">SUBMIT</button>
-        </div>
-    </form>
-</div>
+<h1 class="title text-center mt-5">Tambah Karyawan</h1>
+<form method="POST">
+    <label>Nama</label>
+    <input class="form-control mb-2" name="nama" placeholder="Masukkan Nama" required>
+    <label>Jabatan</label>
+    <input class="form-control mb-2" name="jabatan" placeholder="Masukkan Jabatan" required>
+    <label>Usia</label>
+    <input class="form-control mb-3" name="usia" type="number" placeholder="Masukkan Usia" required>
+    <div class="text-center">
+        <button class="btn blue border-dark px-5" name="save">SUBMIT</button>
+    </div>
+</form>
+
 </div>
 </body>
 </html>
