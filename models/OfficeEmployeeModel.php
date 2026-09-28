@@ -1,0 +1,12 @@
+<?php
+$host = "127.0.0.1";
+$user = "root";
+$pass = "";
+$db   = "afl1webdev";
+$port = 2929;
+
+$conn = mysqli_connect($host, $user, $pass, $db, $port);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
