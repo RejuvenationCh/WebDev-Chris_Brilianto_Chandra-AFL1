@@ -11,9 +11,9 @@ if (isset($_GET['page'])) {
 }
 
 if ($page == 'office') {
-    require 'controllers/OfficeController.php';
+    require 'controller/OfficeController.php';
 } elseif ($page == 'office_employee') {
-    require 'controllers/OfficeEmployeeController.php';
+    require 'controller/OfficeEmployeeController.php';
 } else {
-    require 'controllers/EmployeeController.php';
+    require 'controller/EmployeesController.php';
 }
