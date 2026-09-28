@@ -1,3 +1,6 @@
 <?php
 require 'db.php';
-echo "connected";
+require 'models/EmployeeModel.php';
+require 'models/OfficeModel.php';
+require 'models/OfficeEmployeeModel.php';
+
